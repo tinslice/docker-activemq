@@ -34,6 +34,9 @@ services:
     image: tinslice/activemq
     container_name: activemq
     restart: always
+    ports: 
+      - "61613:61613"
+      - "8161:8161"
     volumes: 
       - ./amq-config:/opt/activemq/conf
       - ./amq-data:/opt/activemq/data
