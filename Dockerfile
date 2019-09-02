@@ -15,14 +15,20 @@ RUN mkdir -p /opt && \
 
 RUN tar -xzvf $ACTIVEMQ-bin.tar.gz -C /opt && \
     ln -s /opt/$ACTIVEMQ $ACTIVEMQ_HOME && \
+    mkdir -p /opt/template/activemq && \
+    cp -r /opt/$ACTIVEMQ/conf /opt/template/activemq/ && \
+    cp -r /opt/$ACTIVEMQ/data /opt/template/activemq/ && \
     addgroup -S activemq && \
     adduser -S -G activemq --home ${ACTIVEMQ_HOME} activemq && \
     chown -R activemq:activemq /opt/$ACTIVEMQ && \
-    chown -h activemq:activemq $ACTIVEMQ_HOME 
+    chown -h activemq:activemq $ACTIVEMQ_HOME && \
+    chown -h activemq:activemq /opt/template/activemq
+
+COPY fs/ /
 
 USER activemq
 
 WORKDIR $ACTIVEMQ_HOME
 EXPOSE $ACTIVEMQ_UI $ACTIVEMQ_TCP $ACTIVEMQ_MQTT $ACTIVEMQ_AMQP $ACTIVEMQ_STOMP $ACTIVEMQ_WS 
 
-CMD ["/bin/sh", "-c", "bin/activemq console"]
+CMD ["/bin/sh", "-c", "/prepare-env-and-run.sh"]
