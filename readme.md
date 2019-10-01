@@ -2,6 +2,7 @@
 
 [![Docker Automated build](https://img.shields.io/docker/cloud/automated/tinslice/activemq.svg?style=flat)](https://hub.docker.com/r/tinslice/activemq/builds)
 [![Docker Build Status](https://img.shields.io/docker/cloud/build/tinslice/activemq.svg?style=flat)](https://hub.docker.com/r/tinslice/activemq/builds)
+[![Docker Pulls](https://img.shields.io/docker/pulls/tinslice/activemq.svg?style=flat)](https://hub.docker.com/r/tinslice/activemq/)
 [![license](https://img.shields.io/github/license/tinslice/docker-activemq.svg)](https://github.com/tinslice/docker-activemq)
 
 Docker image for activemq.
