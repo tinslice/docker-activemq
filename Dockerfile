@@ -26,6 +26,8 @@ RUN tar -xzvf $ACTIVEMQ-bin.tar.gz -C /opt && \
 
 COPY fs/ /
 
+RUN chown -h activemq:activemq /prepare-env-and-run.sh
+
 USER activemq
 
 WORKDIR $ACTIVEMQ_HOME
