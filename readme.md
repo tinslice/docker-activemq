@@ -7,7 +7,7 @@
 
 Docker image for activemq.
 
-Available images: `5.15.8`
+Available images: `5.15.8-jdk8`, `5.15.8-jdk11`
 
 Exposed ports:
 
