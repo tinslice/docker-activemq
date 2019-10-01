@@ -1,4 +1,4 @@
-FROM adoptopenjdk/openjdk8:alpine-slim
+FROM adoptopenjdk/openjdk11:alpine-slim
 
 ENV ACTIVEMQ_VERSION 5.15.8
 ENV ACTIVEMQ apache-activemq-$ACTIVEMQ_VERSION
